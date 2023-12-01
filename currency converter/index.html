@@ -4,6 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>currency converter</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="img-container"></div>
+      <h3>Currency Converter</h3>
+      <div class="input-container">
+        <div>
+          <select id="select-currency-input"></select>
+          <input id="number-currency-input" type="number" value="1" />
+        </div>
+        <div>
+          <button id="swap-btn">สลับสกุลเงิน</button>
+          <span id="exchange-rate"></span>
+        </div>
+        <div>
+          <select id="select-currency-output"></select>
+          <input id="number-currency-output" type="number" />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
