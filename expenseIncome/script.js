@@ -16,6 +16,17 @@ function formatNumber(x) {
   return parts.join(".");
 }
 
+function removeTransaction(element, deletedAmount, type) {
+  element.remove();
+  console.log("remove ");
+  if (type === "expense") {
+    expenseAll -= deletedAmount;
+  } else if (type === "income") {
+    incomeAll -= deletedAmount;
+  }
+  updateTransaction();
+}
+
 function updateTransaction() {
   expense.innerText = `฿${formatNumber(expenseAll)}`;
   income.innerText = `฿${formatNumber(incomeAll)}`;
@@ -35,14 +46,15 @@ function createTransaction(title, amount, type) {
     "position-absolute",
     "remove-btn"
   );
+  removeBtn.addEventListener("click", function (e) {
+    let deletedAmount = this.parentElement.lastChild.innerText;
+    let element = this.parentElement;
+    removeTransaction(element, deletedAmount, type);
+  });
   newTransaction.prepend(removeBtn);
   newTransaction.addEventListener("mouseover", function () {
     removeBtn.classList.remove("d-none");
     removeBtn.classList.add("z-2");
-    removeBtn.addEventListener("click", function (e) {
-      console.dir(this);
-      this.parentElement.remove();
-    });
   });
   newTransaction.addEventListener("mouseout", function () {
     removeBtn.classList.remove("z-1");
