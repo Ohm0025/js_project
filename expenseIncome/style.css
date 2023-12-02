@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 0;
+  background-color: rgb(214, 214, 214);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.container-custom-width {
+  min-width: 300px;
+  max-width: 500px;
+}
+[class^="list-item-"] {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  padding-left: 50px;
+  align-self: center;
+}
+.list-item-expense {
+  border-right: 5px solid red;
+}
+.list-item-income {
+  border-right: 5px solid green;
+}
+ul {
+  max-height: 200px;
+}
+select {
+  appearance: none;
+  cursor: pointer;
+}
+.remove-btn {
+  left: 0;
+}
+select:focus,
+input:focus {
+  outline: none;
+}
